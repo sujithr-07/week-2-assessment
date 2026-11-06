@@ -111,3 +111,31 @@ scores = cross_val_score(
 print(f"CV: {scores.mean():.2f} +/- {scores.std():.2f}")
 
 
+#Data leakage demonstration
+
+scaler = StandardScaler()
+
+# Incorrect: fitting scaler on entire dataset
+X_scaled = scaler.fit_transform(X)
+
+# Split after scaling
+X_train_bad, X_test_bad, y_train_bad, y_test_bad = train_test_split(
+    X_scaled,
+    y,
+    test_size=0.20,
+    random_state=42,
+    stratify=y
+)
+
+print("Incorrect scaling completed")
+
+# Fit scaler only on training data
+scaler = StandardScaler()
+
+X_train_scaled = scaler.fit_transform(X_train)
+
+# Transform validation and test data
+X_val_scaled = scaler.transform(X_val)
+X_test_scaled = scaler.transform(X_test)
+
+print("Correct scaling completed")
