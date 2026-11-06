@@ -72,3 +72,42 @@ for depth in depths:
     )
 
 
+Plot vs Figure
+plt.figure(figsize=(8, 5))
+
+plt.plot(
+    [str(d) for d in depths],
+    train_scores,
+    marker='o',
+    label='Training Accuracy'
+)
+
+plt.plot(
+    [str(d) for d in depths],
+    val_scores,
+    marker='o',
+    label='Validation Accuracy'
+)
+
+plt.xlabel("Maximum Tree Depth")
+plt.ylabel("Accuracy")
+plt.title("Decision Tree: Overfitting Demonstration")
+plt.legend()
+plt.grid(True)
+
+plt.show()
+
+#Logistic Regression
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+
+lr = LogisticRegression(max_iter=5000)
+
+scores = cross_val_score(
+    lr, X_train_scaled, y_train,
+    cv=5, scoring='accuracy'
+)
+
+print(f"CV: {scores.mean():.2f} +/- {scores.std():.2f}")
+
+
