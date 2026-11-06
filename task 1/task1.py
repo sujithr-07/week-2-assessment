@@ -39,3 +39,36 @@ print("Training size:", len(X_train))
 print("Validation size:", len(X_val))
 print("Testing size:", len(X_test))
 
+#Overfitting demonstration with Decision Tree Classifier
+depths = [1, 3, 5, 10, None]
+
+train_scores = []
+val_scores = []
+
+for depth in depths:
+
+    model = DecisionTreeClassifier(
+        max_depth=depth,
+        random_state=42
+    )
+
+    model.fit(X_train, y_train)
+
+    # Training accuracy
+    train_pred = model.predict(X_train)
+    train_acc = accuracy_score(y_train, train_pred)
+
+    # Validation accuracy
+    val_pred = model.predict(X_val)
+    val_acc = accuracy_score(y_val, val_pred)
+
+    train_scores.append(train_acc)
+    val_scores.append(val_acc)
+
+    print(
+        f"Depth {depth}: "
+        f"Train {train_acc:.2f} "
+        f"Val {val_acc:.2f}"
+    )
+
+
