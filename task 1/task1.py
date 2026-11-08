@@ -72,7 +72,7 @@ for depth in depths:
     )
 
 
-Plot vs Figure
+#Plot vs Figure
 plt.figure(figsize=(8, 5))
 
 plt.plot(
