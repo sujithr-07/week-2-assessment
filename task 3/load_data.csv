@@ -1,0 +1,22 @@
+
+age,income,loan_amount,employment,education,application_date,loan_status
+25,30000,10000,Salaried,Graduate,2024-01-01,0
+32,45000,15000,Self-employed,Postgraduate,2024-01-31,0
+45,80000,30000,Salaried,Graduate,2024-03-01,1
+28,35000,12000,Unemployed,High School,2024-03-31,0
+50,90000,35000,Salaried,Postgraduate,2024-04-30,1
+35,60000,20000,Self-employed,Graduate,2024-05-30,1
+40,70000,25000,Salaried,Postgraduate,2024-06-29,1
+,40000,14000,Salaried,Graduate,2024-07-29,0
+29,32000,11000,Unemployed,High School,2024-08-28,0
+55,100000,40000,Salaried,Postgraduate,2024-09-27,1
+38,55000,18000,Self-employed,Graduate,2024-10-27,1
+42,75000,28000,Salaried,Postgraduate,2024-11-26,1
+31,42000,13000,Salaried,Graduate,2024-12-26,0
+48,85000,32000,Self-employed,Postgraduate,2025-01-25,1
+27,31000,10000,Unemployed,High School,2025-02-24,0
+36,58000,19000,Salaried,Graduate,2025-03-26,1
+44,78000,27000,Salaried,Postgraduate,2025-04-25,1
+52,95000,38000,Self-employed,Graduate,2025-05-25,1
+33,47000,16000,Salaried,Graduate,2025-06-24,0
+39,65000,22000,Self-employed,Postgraduate,2025-07-24,1
